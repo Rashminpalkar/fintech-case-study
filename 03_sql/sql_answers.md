@@ -4,6 +4,7 @@
 
 ### Query
 
+```sql
 SELECT
 	status,
     COUNT(*) AS transaction_count
@@ -11,6 +12,7 @@ FROM
 	transaction_cleaned
 GROUP BY
 	status;
+```
 
 ### Result Summary
 
@@ -26,6 +28,7 @@ The transactions are mostly successful, with Captured (19) being the dominant st
 
 ### Query
 
+```sql
 SELECT 
     merchant_name,
     SUM(amount_usd) AS captured_gmv
@@ -35,6 +38,7 @@ WHERE
 	status = 'Captured'
 GROUP BY 
 	merchant_name;
+```
 
 ### Result Summary
 
@@ -51,6 +55,7 @@ Among successful transactions, Beta Stores and Alpha Mart contribute the highest
 
 ### Query
 
+```sql
 SELECT 
     merchant_name,
     SUM(amount_usd) AS captured_gmv
@@ -63,6 +68,7 @@ GROUP BY
 ORDER BY 
 	captured_gmv DESC
 LIMIT 10;
+```
 
 ### Result Summary
 
@@ -79,6 +85,7 @@ Ranking captured GMV confirms Beta Stores as the top-performing merchant, follow
 
 ### Query
 
+```sql
 SELECT 
     transaction_date,
     SUM(amount_usd) AS daily_gmv,
@@ -91,6 +98,7 @@ GROUP BY
 	transaction_date
 ORDER BY 
 	transaction_date;
+```
 
 ### Result Summary
 
@@ -109,6 +117,7 @@ Daily GMV shows a declining trend over time, with the highest activity on 01-03-
 
 ### Query
 
+```sql
 SELECT 
     merchant_name,
     COUNT(*) AS total_transactions,
@@ -122,6 +131,7 @@ GROUP BY
     merchant_name
 HAVING 
     chargeback_ratio > 1;
+```
 
 ### Result Summary
 
@@ -138,6 +148,7 @@ Several merchants show elevated chargeback ratios, with Eco Home (50%) and Delta
 
 ### Query
 
+```sql
 SELECT 
     gateway_region,
     AVG(risk_score) AS avg_risk_score,
@@ -150,6 +161,7 @@ HAVING
 	AVG(risk_score) > 50
 	AND 
 	COUNT(*) > 20;
+```
 
 ### Result Summary
 
@@ -163,6 +175,7 @@ The APAC region shows a high average risk score (65.75) with sufficient transact
 
 ### Query
 
+```sql
 SELECT 
     user_id,
     transaction_date,
@@ -175,6 +188,7 @@ GROUP BY
 	user_id, transaction_date
 HAVING 
 	COUNT(*) >= 3;
+```
 
 ### Result Summary
 
@@ -188,6 +202,7 @@ User U008 shows a spike in bad transactions (failed + chargebacks) on 05-03-2026
 
 ### Query
 
+```sql
 SELECT 
     merchant_name,
     SUM(CASE WHEN status = 'Chargeback' THEN 1 ELSE 0 END) 
@@ -200,6 +215,7 @@ FROM
 	transaction_cleaned
 GROUP BY 
 	merchant_name;
+```
 
 ### Result Summary
 
