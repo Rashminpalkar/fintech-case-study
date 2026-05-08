@@ -1,0 +1,14 @@
+﻿Merchant Risk Summary,,,,,
+merchant_name,total_transactions,total_gvm_usd,average_risk_score,high_risk_txn_count,high_value_txn_count
+Beta Stores,11,41782,69.36,5,3
+Alpha Mart,11,40812,61.2,3,2
+Delta Travels,4,14600,48.75,1,1
+Eco Home,2,10246,54.5,1,1
+City Pharma,2,8640,40,0,0
+,,,,,
+,,,,,
+Region-wise Summary,,,,,
+Gateway_region,total_gvm_usd,high_risk_txn_count,high_value_txn_count,,
+APAC,77715.00,8,5,,
+EU,20168.00,1,1,,
+US,18197.00,1,1,,
