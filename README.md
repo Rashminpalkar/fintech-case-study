@@ -195,12 +195,6 @@ api_normalized.csv
 
 ---
 
-## Dashboard Preview
-
-![alt text](QuickPay_Transaction_Monitoring_Dashboard_page-0001.jpg)
-
----
-
 # Technologies Used
 
 | Technology | Purpose |
